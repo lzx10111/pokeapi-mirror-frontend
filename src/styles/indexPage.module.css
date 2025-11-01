@@ -1,0 +1,9 @@
+.loader-row {
+    width: var(--pkm-index-loader-row-width);
+}
+
+@media (max-width: 575.98px) {
+    .loader-row {
+        --pkm-index-loader-row-width: calc(100vw - 80px);
+    }
+}

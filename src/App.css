@@ -1,0 +1,170 @@
+:root {
+    --pkm-bg-color: rgba(14, 16, 17, 255);
+    --pkm-bg-color-yellow: #dfb746;
+    --pkm-navbar-bg-color: #1c1e20;
+    --pkm-btn-bg-color: #004cc4;
+    --pkm-text-color: rgb(221, 215, 206);
+    --pkm-border-color: #323738;
+    --pkm-container-percent-gray: 14%;
+    --pkm-margin-footer-pagination: 3.2rem;
+    --pkm-home-container-height: calc(100vh - 74px - 6rem);
+    --pkm-profile-title-font-size: 2.5rem;
+    --pkm-profile-container-carousel-width: 50%;
+    --pkm-pagination-footer-bg-color: crimson;
+    --pkm-index-loader-row-width: 100%;
+    --pkm-notauthorized-row-width: 50%;
+}
+
+body {
+    background-color: var(--pkm-bg-color) !important;
+}
+
+.border {
+    --bs-border-color: var(--pkm-border-color);
+}
+
+.customHrNavbar {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 2px;
+}
+
+header .container-fluid {
+    --bs-gutter-x: 2.5rem;
+}
+
+header .navbar {
+    --bs-navbar-padding-y: 0.75rem;
+}
+
+header .navbar-brand>img {
+    height: 40px;
+    aspect-ratio: 5/2;
+}
+
+header .navbar-nav {
+    border: 2px solid white;
+    border-radius: 3px;
+    border-bottom-color: #9d662d;
+    border-right-color: #9d662d;
+    --bs-nav-link-color: var(--pkm-border-color);
+    --bs-nav-link-hover-color: red;
+}
+
+header .customHrNavbar {
+    border-color: #9d662d;
+}
+
+header .nav-item {
+    background-image: radial-gradient(ellipse farthest-side, white, var(--pkm-bg-color-yellow));
+}
+
+header .nav-item>a {
+    font-weight: 600;
+}
+
+header .navbar-bg-customColor {
+    background-color: var(--pkm-navbar-bg-color) !important;
+}
+
+header .vr {
+    background-color: white !important;
+}
+
+main>div.container {
+    max-width: calc(100% - 1.5rem * 2);
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+main th,
+td {
+    background-color: var(--pkm-bg-color) !important;
+}
+
+main input {
+    background-color: var(--pkm-bg-color) !important;
+    border-color: var(--pkm-border-color) !important;
+}
+
+main i,
+span {
+    color: var(--pkm-text-color);
+}
+
+main .favorite>i:nth-child(even) {
+    background-image: linear-gradient(to bottom right, var(--pkm-bg-color-yellow) 40%, white);
+    color: transparent;
+    background-clip: text;
+}
+
+main .favorite>i:nth-child(odd) {
+    color: var(--pkm-bg-color-yellow);
+}
+
+main .modal {
+    --bs-modal-bg: var(--pkm-bg-color);
+    --bs-modal-color: var(--pkm-text-color);
+}
+
+main .accordion {
+    --bs-accordion-border-color: var(--pkm-border-color);
+    --bs-accordion-bg: var(--pkm-bg-color);
+}
+
+main .accordion-button {
+    background-image: linear-gradient(to right, var(--pkm-bg-color-yellow) 75%, white);
+}
+
+main .col-form-label {
+    color: var(--pkm-text-color) !important;
+}
+
+main .form-label {
+    color: var(--pkm-text-color) !important;
+}
+
+main .form-control,
+.form-control:focus {
+    color: var(--pkm-text-color);
+}
+
+main .btn {
+    --bs-btn-color: var(--pkm-text-color);
+    --bs-btn-bg: var(--pkm-btn-bg-color);
+    --bs-btn-hover-bg: #004bc4df;
+    --bs-btn-hover-border-color: var(--pkm-btn-bg-color);
+}
+
+main .btn-Custom-Two {
+    background-image: linear-gradient(to bottom right, var(--pkm-bg-color-yellow) 40%, white);
+    color: var(--pkm-border-color);
+}
+
+main .btn-Custom-Two>i {
+    color: var(--pkm-border-color);
+}
+
+main .table {
+    --bs-table-color: var(--pkm-text-color);
+}
+
+main .pagination {
+    --bs-pagination-color: rgb(220, 20, 60);
+    --bs-pagination-bg: var(--pkm-bg-color);
+    --bs-pagination-active-color: white;
+    --bs-pagination-active-bg: rgb(220, 20, 60);
+    --bs-pagination-active-border-color: var(--pkm-border-color);
+    margin-bottom: 0%;
+}
+
+main .btn-customColor {
+    background-image: radial-gradient(ellipse farthest-side, white, var(--pkm-bg-color-yellow));
+    color: #052c65 !important;
+}
+
+main .btn-customColor>i {
+    color: #052c65 !important;
+}

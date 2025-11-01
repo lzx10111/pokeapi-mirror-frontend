@@ -1,0 +1,15 @@
+.text {
+    color: #ffbf00;
+    text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+        1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+}
+
+.row-width {
+    width: var(--pkm-notauthorized-row-width);
+}
+
+@media (max-width: 575.98px) {
+    .row-width {
+        --pkm-notauthorized-row-width: 80%;
+    }
+}

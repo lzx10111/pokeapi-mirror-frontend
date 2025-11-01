@@ -1,0 +1,43 @@
+footer .footerContainer {
+    max-width: calc(100% - 1.5rem * 2);
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    height: calc(0px + 100%);
+    background-color: #b80717;
+    background-image: linear-gradient(to right, #333333 var(--pkm-container-percent-gray), transparent var(--pkm-container-percent-gray), transparent 100%),
+        linear-gradient(calc(135deg - 20deg), #9f0000 calc(var(--pkm-container-percent-gray) + 10%), transparent calc(var(--pkm-container-percent-gray) + 10%), transparent 100%),
+        linear-gradient(calc(315deg - 20deg), #9f0000 10%, transparent 10%, transparent 100%);
+}
+
+footer .footerContainer .elements {
+    margin-left: var(--pkm-container-percent-gray);
+}
+
+footer .footerContainer i {
+    font-size: 1.5rem;
+}
+
+footer .footerContainer a {
+    display: inline-block;
+    height: 32px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+footer .footerContainer span {
+    font-weight: 700;
+}
+
+footer .footerContainer .custom-silver-style {
+    background-image: linear-gradient(var(--pkm-border-color), white);
+    color: transparent;
+    background-clip: text;
+    filter: drop-shadow(2px 2px 4px black);
+}
+
+footer .footerContainer .custom-golden-style {
+    background-image: linear-gradient(var(--pkm-bg-color-yellow), var(--pkm-border-color));
+    color: transparent;
+    background-clip: text;
+    filter: drop-shadow(2px 2px 4px black);
+}

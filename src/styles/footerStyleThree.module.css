@@ -1,0 +1,92 @@
+footer .footerContainer {
+    max-width: calc(100% - 1.5rem * 2);
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    height: calc(0px + 100%);
+    background-color: #b80717;
+    background-image: linear-gradient(to right, #333333 var(--pkm-container-percent-gray), transparent var(--pkm-container-percent-gray), transparent 100%),
+        linear-gradient(calc(135deg - 20deg), #9f0000 calc(var(--pkm-container-percent-gray) + 10%), transparent calc(var(--pkm-container-percent-gray) + 10%), transparent 100%),
+        linear-gradient(calc(315deg - 20deg), #9f0000 10%, transparent 10%, transparent 100%);
+}
+
+footer .footerContainer .field-data {
+    background-color: rgba(144, 7, 17, 0.7);
+    vertical-align: middle;
+    font-weight: 700;
+}
+
+footer .footerContainer .field-data > button:hover {
+    background-color: #b80717;
+}
+
+footer .footerContainer .field-data .check-complete {
+    color: #34b233;
+}
+
+footer .footerContainer .icons-area {
+    max-width: var(--pkm-container-percent-gray);
+}
+
+footer .footerContainer .icons-area-plataform {
+    width: 50%;
+}
+
+footer .footerContainer .icons-area-logo {
+    width: 45%;
+    height: 50%;
+    text-decoration: none;
+    line-height: 0%;
+}
+
+footer .footerContainer .test {
+    width: 45%;
+    height: 50%;
+}
+
+footer .footerContainer .test:hover {
+    background-color: #9f0000;
+}
+
+footer .footerContainer .icons-area-logo > img {
+    width: 100%;
+    height: 100%;
+}
+
+footer .footerContainer i {
+    font-size: 1.3rem;
+}
+
+footer .footerContainer .last-field-data {
+    margin-top: 20%;
+}
+
+footer .footerContainer .custom-silver-style {
+    background-image: linear-gradient(var(--pkm-border-color), white);
+    font-weight: 700;
+    color: transparent;
+    background-clip: text;
+    filter: drop-shadow(2px 2px 4px black);
+}
+
+footer .footerContainer .custom-golden-style {
+    background-image: linear-gradient(var(--pkm-bg-color-yellow), var(--pkm-border-color));
+    color: transparent;
+    background-clip: text;
+    filter: drop-shadow(2px 2px 4px black);
+}
+
+@media (max-width: 575.98px) {
+    footer .footerContainer, .icons-area {
+        --pkm-container-percent-gray: 20%;
+    }
+}
+
+/* @media (min-width: 576px) and (max-width: 767.98px) {}
+
+@media (min-width: 768px) and (max-width: 991.98px) {}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {}
+
+@media (min-width: 1200px) and (max-width: 1399.98px) {}
+
+@media (min-width: 1400px) {} */

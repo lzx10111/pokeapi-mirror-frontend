@@ -1,0 +1,90 @@
+footer .footerContainer {
+  max-width: calc(100% - 1.5rem * 2);
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+footer .footerContainer img {
+  aspect-ratio: 7/5;
+  height: 60px;
+}
+
+footer .footerContainer i {
+  font-size: 1.5rem;
+}
+
+footer .footerContainer a {
+  display: inline-block;
+  height: 32px;
+  background-image: linear-gradient(#9b111e, var(--pkm-border-color));
+  color: transparent;
+  background-clip: text;
+  text-decoration: none;
+}
+
+footer .footerContainer .author {
+  height: 33.5px;
+  background-image: linear-gradient(#9b111e, var(--pkm-border-color));
+  color: transparent;
+  background-clip: text;
+}
+
+footer .footerContainer .author span {
+  background-image: linear-gradient(#9b111e, var(--pkm-border-color));
+  color: transparent;
+  background-clip: text;
+}
+
+footer .footerContainer .customHr {
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 3px;
+}
+
+footer .footerContainer .customHrAnimated {
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px;
+  border-color: transparent;
+  border-color: rgba(46, 125, 237, 0.874);
+  width: 25%;
+  position: absolute;
+  animation: linear infinite;
+  animation-name: run;
+  animation-duration: 2s;
+  animation-direction: reverse;
+}
+
+@keyframes run {
+  from {
+    border-color: transparent;
+    left: calc(0px - 25% - 2px);
+    transform: scaleX(0.0001);
+  }
+
+  10% {
+    border-color: transparent;
+  }
+
+  15% {
+    transform: scaleX(0.01);
+  }
+
+  25% {
+    border-color: rgba(46, 125, 237, 0.874);
+    transform: scaleX(1);
+  }
+
+  to {
+    border-color: rgba(46, 125, 237, 0.874);
+    left: calc(100% - 25%);
+  }
+}

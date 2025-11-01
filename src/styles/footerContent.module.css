@@ -1,0 +1,39 @@
+footer .footerContent {
+    margin-top: var(--pkm-margin-footer-pagination);
+    margin-bottom: var(--pkm-margin-footer-pagination);
+}
+
+footer .footerContent .pagination > div {
+    height: 1px;
+    background-color: var(--pkm-pagination-footer-bg-color);
+}
+
+footer .footerContent .pagination > button {
+    height: 2rem;
+    width: 2rem;
+    background-color: var(--pkm-pagination-footer-bg-color);
+}
+
+footer .footerContent .pagination > button:active {
+    background-color: var(--pkm-pagination-footer-bg-color);
+}
+
+footer .footerContent .pagination .activePage {
+    box-shadow: 2px 2px 2px #888888;
+}
+
+footer .footerContent .pagination-direction {
+    width: calc(70px * 2);
+    padding-left: 0%;
+    padding-right: 0%;
+}
+
+footer .footerContent .pagination-direction > div {
+    height: 1px;
+    background-color: var(--pkm-pagination-footer-bg-color);
+}
+
+footer .footerContent .pagination-direction i{
+    font-size: 2rem;
+    color: var(--pkm-pagination-footer-bg-color);
+}
