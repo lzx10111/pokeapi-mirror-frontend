@@ -6,7 +6,7 @@ import { useRef } from "react";
 
 export default function EditionPage() {
     const editionFormData = useRef(data);
-    const editionFormElements = editionFormData.current.map((x, index) => <EditionForm key={index} obj={x} />);
+    const editionFormElements = editionFormData.current.map((x, index) => <EditionForm key={index} obj={x} i={index} />);
 
     return (
         <>
@@ -18,13 +18,13 @@ export default function EditionPage() {
                     </div>
                 </div>
 
-                <div className="container containerEdition mt-4 overflow-hidden border border-secundary rounded">
+                <div className="container mt-4 overflow-hidden border border-secundary rounded">
                     {editionFormElements[0]}
                 </div>
-                <div className="container containerEdition mt-5 overflow-hidden border border-secundary rounded">
+                <div className="container mt-5 overflow-hidden border border-secundary rounded">
                     {editionFormElements[1]}
                 </div>
-                <div className="container containerEdition">
+                <div className="container">
                     <div className="row">
                         <div className="container col me-2 mt-5 overflow-hidden border border-secundary rounded">
                             {editionFormElements[2]}

@@ -14,11 +14,28 @@ export default function EditionForm(props) {
 
     useEffect(() => {
         if (isChanged) {
+
+            function disabled(value) {
+                for (let i = 0; i < 4; i++) {
+                    let elem = document.getElementById(`button-update-${i}`);
+                    
+                    if (value === "true") {
+                        elem.setAttribute("disabled", value); 
+                    }
+                    
+                    if (value === "false") {
+                        elem.removeAttribute("disabled");
+                    }
+                }
+            }
+
+            disabled("true");
+
             fetch(`/api/admin/${props.obj.u}`,
                 {
                     method: "POST",
                     body: JSON.stringify(formData),
-                    headers: { 
+                    headers: {
                         'Authorization': `Bearer ${keycloak.token}`,
                         'Content-Type': 'application/json'
                     }
@@ -34,6 +51,7 @@ export default function EditionForm(props) {
                         setSuccessValidationData(null);
                     }
 
+                    disabled("false");
                     setIsChanged(false);
                 });
         }
@@ -43,19 +61,19 @@ export default function EditionForm(props) {
         let obj = {};
 
         formData.forEach((value, key) => {
-            if (props.obj.inputName1 === key && props.obj.inputName1.includes("Group")) {
+            if (props.obj.inputName1 === key && props.obj.inputName1.includes("group")) {
                 return obj["start"] = value;
             }
-            
-            if (props.obj.inputName2 === key && props.obj.inputName1.includes("Group")) {
+
+            if (props.obj.inputName2 === key && props.obj.inputName1.includes("group")) {
                 return obj["end"] = value;
             }
 
-            if (props.obj.inputName1 === key && props.obj.inputName1.includes("Specific")) {
+            if (props.obj.inputName1 === key && props.obj.inputName1.includes("specific")) {
                 return obj["id"] = value;
             }
-            
-            if (props.obj.inputName2 === key && props.obj.inputName1.includes("Specific")) {
+
+            if (props.obj.inputName2 === key && props.obj.inputName1.includes("specific")) {
                 return obj["name"] = value;
             }
         });
@@ -80,8 +98,8 @@ export default function EditionForm(props) {
                         <input type="text" className="form-control" name={props.obj.inputName2} id={props.obj.inputName2} />
                     </div>
                     <div className="col">
-                        <label htmlFor="myButton" className="form-label">&nbsp;</label>
-                        <button type="submit" className="btn d-block form-control btn-primary" id="myButton">
+                        <label htmlFor={`button-update-${props.i}`} className="form-label">&nbsp;</label>
+                        <button type="submit" className="btn d-block form-control btn-primary" id={`button-update-${props.i}`}>
                             <i className={myClassName}></i>{props.obj.labelTitle}
                         </button>
                     </div>
