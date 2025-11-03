@@ -16,7 +16,7 @@ export default function ProfilePokemon(props) {
                         {
                             method: "POST",
                             body: JSON.stringify({
-                                "id": props.pokemonData.id
+                                "id": props.pokemonData.id.toString()
                             }),
                             headers: {
                                 'Authorization': `Bearer ${keycloak.token}`,
