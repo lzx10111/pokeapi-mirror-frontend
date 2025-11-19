@@ -110,7 +110,7 @@ export default function EditionForm(props) {
                     <i className="bi bi-info-circle"></i>
                     <span>{props.obj.labelTextInfo}</span>
                 </div>
-                {errorValidationData.length !== 0 ? <ErrorComponent data={errorValidationData} format={2} divClass={"col-12 mt-4 text-danger"} /> : null}
+                {errorValidationData.length !== 0 ? <ErrorComponent data={errorValidationData} divClass={"col-12"} /> : null}
                 {successValidationData !== null ? <SuccessComponent data={"".concat(props.obj.successMsg[0], successValidationData.total, props.obj.successMsg[1])} /> : null}
                 {isChanged ? <EditionLoading /> : null}
             </div>

@@ -3,49 +3,56 @@ export default function ErrorComponent(props) {
 
     function getResult() {
         if (isObject(props.data)) {
-            return !isEmpty(props.data) ? formattedWithObject() : null;
+            return !isEmpty(props.data) ? <div className={props.divClass}>{formattedWithObject(props.data)}</div> : null;
         }
 
         if (isArray(props.data)) {
-            return props.data.length !== 0 ? formattedWithArray() : null;
+            return props.data.length !== 0 ? formattedWithArray(props.data) : null;
         }
 
         return null;
     }
 
-    function formattedWithObject() {
-        switch (props.format) {
-            case 0:
-                return fieldMsgToList(props.data.fieldMsg);
-            case 1:
-                return <li>{`Error (${props.data.fieldName}):`}<ul>{fieldMsgToList(props.data.fieldMsg)}</ul></li>;
-            case 2:
-                return <li>{`Error (${props.data.fieldName}): Valor rechazado (${fieldValueCorrector(props.data.fieldValue)}).`}<ul>{fieldMsgToList(props.data.fieldMsg)}</ul></li>;
-            default:
-                return fieldMsgToList(props.data.fieldMsg);
+    function formattedWithObject(obj) {
+        if (obj.fieldName === null && obj.fieldValue === null) {
+            return (
+                <>
+                    <i className="bi bi-x-circle text-danger"></i>
+                    <span className="text-danger"> {obj.fieldMsg}</span>
+                </>
+            );
+        }
+
+        if (obj.fieldValue === null) {
+            return (
+                <>
+                    <i className="bi bi-x-circle text-danger"></i>
+                    <span className="text-danger"> Error en <b>{obj.fieldName}</b>: {obj.fieldMsg}</span>
+                </>
+            );
+        }
+
+        if (obj.fieldName === null) {
+            return (
+                <>
+                    <i className="bi bi-x-circle text-danger"></i>
+                    <span className="text-danger"> Error con el valor <b>{obj.fieldValue}</b>: {obj.fieldMsg}</span>
+                </>
+            );
+        }
+
+        if (obj.fieldName !== null && obj.fieldValue !== null) {
+            return (
+                <>
+                    <i className="bi bi-x-circle text-danger"></i>
+                    <span className="text-danger"> Error en <b>{obj.fieldName}</b> con el valor <b>{obj.fieldValue}</b>: {obj.fieldMsg}</span>
+                </>
+            );
         }
     }
 
-    function formattedWithArray() {
-        switch (props.format) {
-            case 0:
-                return props.data.map((x) => fieldMsgToList(x.fieldMsg));
-            case 1:
-                return props.data.map((x, index) => <li key={index}>{`Error (${x.fieldName}):`}<ul>{fieldMsgToList(x.fieldMsg)}</ul></li>);
-            case 2:
-                return props.data.map((x, index) =>
-                    <li key={index}>{`Error (${x.fieldName}): Valor rechazado (${fieldValueCorrector(x.fieldValue)}).`}<ul>{fieldMsgToList(x.fieldMsg)}</ul></li>);
-            default:
-                return props.data.map((x) => fieldMsgToList(x.fieldMsg));
-        }
-    }
-
-    function fieldValueCorrector(value) {
-        return value === "" ? undefined : value;
-    }
-
-    function fieldMsgToList(arr) {
-        return arr.map((x, index) => <li key={index}>{x}</li>);
+    function formattedWithArray(array) {
+        return array.map((x, index) => <div key={index} className={props.divClass}>{formattedWithObject(x)}</div>);
     }
 
     function isObject(obj) {
@@ -68,11 +75,7 @@ export default function ErrorComponent(props) {
 
     return (
         <>
-            <div className={props.divClass}>
-                <ul>
-                    {elements}
-                </ul>
-            </div>
+            {elements}
         </>
     )
 }
